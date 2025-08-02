@@ -22,10 +22,7 @@ export async function GET() {
     args: isLocal ? puppeteer.defaultArgs() : chromium.args,
     defaultViewport: viewport,
     executablePath:
-      process.env.CHROME_EXECUTABLE_PATH ||
-      (await chromium.executablePath(
-        "https://bc-nepal.t3.storageapi.dev/chromium-v138.0.2-pack.x64.tar"
-      )),
+      process.env.CHROME_EXECUTABLE_PATH || (await chromium.executablePath("")),
     headless: "shell",
   });
 
